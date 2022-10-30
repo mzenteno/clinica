@@ -36,7 +36,7 @@ export default function Login(props) {
             <div className={styles.logoArea}>
               <img className={styles.logo} src="images/logo.png" />
             </div>
-            <h5 className={styles.authTitle}>Zenteno Software </h5>
+            <h5 className={styles.authTitle}>Zenteno's Software </h5>
             <Form >
               <Form.Control className={`${styles.authInput} mb-2 mt-3`} type="email" placeholder="Email adress"/>
               <Form.Control className={`${styles.authInput} mb-2`} type="password" placeholder="Password"/>
