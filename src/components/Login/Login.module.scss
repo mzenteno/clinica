@@ -1,10 +1,12 @@
+@import "/src/stylesConfig/variables";
+
 .pageContent {
   width: 100%;
   min-height: 100vh;
   background: linear-gradient(45deg, rgb(201, 197, 197), white);
 }
 
-.authCard {
+.card {
   background-color: white;
   box-shadow: 0 3px 12px rgb(0 0 0 / 0.2);
   padding: 10px 10%;
@@ -12,7 +14,7 @@
 
 .logoArea {
   padding: 20px 30%;
-  margin-top: 60px;
+  margin-top: 0px;
   display: flex;
   display: flex;
   justify-content: center;
@@ -22,53 +24,35 @@
   width: 80px;
 }
 
-.authTitle {
+.title {
   text-align: center;
   color: rgb(46, 46, 46);
+  margin-bottom: 30px;
 }
 
-.serviceBtn {
-  background-color: white;
-  border: 1px solid rgb(220, 220, 220);
-  width: 100%;
-  color: rgb(87, 83, 83);
-  height: 45px;
-  box-shadow: none !important;
-}
-
-.serviceBtn:hover {
-  background-color: white;
-  color: #1da19b;
-  border: 1px solid #1da19b;
-}
- 
-.serviceBtn > i {
-  margin-right: 30px;
-}
-
-.authInput {
+.input {
   background: white;
   height: 45px;
-  border: 1px solid rgb(220, 220, 220);
-  color: rgb(46, 46, 46);
+  border: 1px solid $colorInputBorder;
+  color: $colorInput;
   box-shadow: none !important;
 }
 
-.authInput:focus {
-  color: #1da19b;
-  border: 1px solid #1da19b;
+.input:focus {
+  color: $colorInputSelected;
+  border: 1px solid $colorInputBorderSelected;
 }
 
-.authBtn {
-  background: #45a29a;
-  color: white;
+.button {
+  background: $colorButtonBackground;
+  color: $colorButtonText;
   height: 45px;
   width: 100%;
   box-shadow: none !important;
 }
 
-.authBtn:hover {
-  background: #24726e;
+.button:hover {
+  background: $colorButtonBackgroundSelected;
   color: white;
 }
 
@@ -78,9 +62,10 @@
 }
 
 .textLink {
-  color: #45a29a;
+  color: $colorLink;
 }
 
 .textLink:hover {
-  color: #24726e;
+  color: $colorLinkSelected;
+  text-decoration:  underline;
 }

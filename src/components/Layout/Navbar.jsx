@@ -1,5 +1,5 @@
 import { useState } from "react"
-import styles from "./Navbar.module.css"
+import styles from "./Navbar.module.scss"
 
 export default function Navbar() { 
     return (
@@ -25,7 +25,7 @@ export default function Navbar() {
 
               <a className={`nav-link ${styles.navProfile} d-flex align-items-center pe-0`} href="#" data-bs-toggle="dropdown">
                 <img src="images/profile-img.jpg" alt="Profile" className="rounded-circle" />
-                <span className="d-none d-md-block dropdown-toggle ps-2">{ UserName }</span>
+                <span className="d-none d-md-block dropdown-toggle ps-2">UserName</span>
               </a>
 
               <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">

@@ -4,7 +4,7 @@ import Login from "./components/Login/Login"
 import Layout from "./components/Layout/Layout"
 import Home from "./components/Home/Home"
 
-import styles from "./App.css"
+import "./App.scss"
 
 export default function App() {
   return (
