@@ -8,7 +8,8 @@ import "./App.scss"
 
 export default function App() {
   return (
-    <Router basename="clinica">
+    // <Router basename="clinica">
+    <Router>
       <Suspense fallback={<p>loading...</p>}>
         <Routes>          
           <Route exact path="/" element={<Login />}  />
