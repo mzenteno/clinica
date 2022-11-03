@@ -1,5 +1,5 @@
-import { useState } from "react"
-import styles from "./Navbar.module.scss"
+import { useState } from "react";
+import styles from "./Navbar.module.scss";
 
 export default function Navbar() { 
     return (

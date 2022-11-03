@@ -1,0 +1,57 @@
+@import "/src/stylesConfig/variables";
+
+.overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background-color: rgba($color: #000000, $alpha: .4);
+  overflow: hidden;
+}
+
+#btnOk {
+  height: 50px;
+  width: 100%;
+  max-width: 180px;
+}
+
+.modal {
+  overflow: hidden;
+}
+
+@media (max-width: 576px){
+  .modal-dialog {
+    margin-top: 0px;
+    max-width: 380px;
+    margin: 1.75rem auto;
+    padding: 10px;
+  }
+}
+@media (min-width: 576px){
+  .modal-dialog {
+    margin-top: 0px;
+    max-width: 380px;
+    margin: 1.75rem auto;
+    padding: 10px;
+  }
+}
+
+.modal-content {
+  min-height: 250px;
+  border-radius: 0px;
+  text-align: center;
+}
+
+.modal-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-footer {
+  border-top: 0px;
+  margin-bottom: 5px;
+  justify-content: center;
+}

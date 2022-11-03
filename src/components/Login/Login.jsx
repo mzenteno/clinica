@@ -1,27 +1,29 @@
-import { useState } from "react"
-import { useNavigate } from "react-router-dom"
-import styles from "./Login.module.scss"
-import { Col, Container, Form } from "react-bootstrap"
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import styles from "./Login.module.scss";
+import { Col, Container, Form } from "react-bootstrap";
+import Modal from "/src/components/portals/Modal";
 
 export default function Login(props) {
-  const [User, SetUser] = useState("")
-  const [UserName, SetUserName] = useState("")
-  const [Password, SetPassword] = useState("")
+  const [ModalParam, SetModalParam] = useState({ isOpen: false, message: "" });
+  const [User, SetUser] = useState("");
+  const [UserName, SetUserName] = useState("");
+  const [Password, SetPassword] = useState("");
+  let navigate = useNavigate();
 
-  let navigate = useNavigate()
+  function ValidateLogin(e){
+    e.preventDefault();
 
-  function SetLogin(e){
-     e.preventDefault();
-
-    if (User.length === 0 || Password.length === 0 ){
-      alert("Complete los datos faltantes...");
+    if (User.length === 0 || Password.length === 0) {
+      SetModalParam({ isOpen: true, message: "Complete todos los datos solcitados" });
+      return
     }
 
     if (User === "admin" && Password === "clave") {
       SetUserName("Juan Marceno Zenteno")
       navigate("/home")
     } else{
-      alert("Error de usuario y/o contraseña...");
+      SetModalParam({ isOpen: true, message: "Error de usuario y/o contraseña" });
       document.getElementById("txtPassword").value = ""
     }
   }
@@ -38,17 +40,14 @@ export default function Login(props) {
             <Form >
               <Form.Control id="txtUserName" className={`${styles.input} mb-2 mt-3`} type="text" placeholder="User Name" onChange={ (e)=>SetUser(e.target.value) }/>
               <Form.Control id="txtPassword" className={`${styles.input} mb-2`} type="password" placeholder="Password" onChange={ (e)=>SetPassword(e.target.value) }/>
-              <button className={`btn ${styles.button} mt-2 mb-4`} onClick={ SetLogin } >Login</button>
+              <button className={`btn ${styles.button} mt-2 mb-4`} onClick={ValidateLogin} >Login</button>
             </Form>
-            {/* <button className={`btn ${styles.serviceBtn} mt-0 mb-3`}>
-              <i className="fab fa-google"></i>
-              Login with google
-            </button> */}
             <p className={`${styles.text} mb-1`}>Forget <a href="" className={styles.textLink}>Password?</a></p>
             <p className={`${styles.text} mb-4`}>Do not hace an account? <a href="" className={styles.textLink}>Sign up</a></p>
           </div>
         </Col>
       </Container>
+      <Modal isOpen={ModalParam.isOpen} onClose={() => SetModalParam({isOpen: false, message: ""})} message={ModalParam.message} >aaa</Modal>
     </div>
   );
 }
